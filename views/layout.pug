@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    if (!user)
+      li
+        a(href='/login') Login            
+      li             
+        a(href='/register') Register
+      if (user)
+        li
+          p#welcome Welcome #{user.username}
+        li
+          a(href='/logout') Logout
+                  
+    block content
